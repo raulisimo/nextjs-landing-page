@@ -104,36 +104,31 @@ export default function TestimonialCard() {
     <section id="testimonial" sx={{ variant: "section.testimonial" }}>
       <Container css={{ textAlign: "center" }}>
         <SectionHeader slogan="Testimonials" title="Meet our clients" />
-
-        <Box sx={styles.carouselWrapper}>
-          <Carousel {...carouselParams}>
-            {data.map((item) => (
-              <Box sx={styles.reviewCard} key={item.id}>
-                <Rating rating={item.review} />
-                <Heading as="h3" sx={styles.title}>
-                  {item.title}
-                </Heading>
-                <Text sx={styles.description}>
-                  {item.description}
-                </Text>
-                <div className="card-footer">
-                  <div className="image">
-                    <Image src={item.avatar} alt="Client Image" />
-                  </div>
-                  <div className="reviwer-info" >
-                    <Heading as="h4" sx={styles.heading}>
-                      {item.name}
-                    </Heading>
-                    <Text sx={styles.designation}>
-                      {item.designation}
-                    </Text>
-                  </div>
-                </div>
-              </Box>
-            ))}
-          </Carousel>
-        </Box>
       </Container>
+      <Box sx={styles.carouselWrapper}>
+        <Carousel {...carouselParams}>
+          {data.map((item) => (
+            <Box sx={styles.reviewCard} key={item.id}>
+              <Rating rating={item.review} />
+              <Heading as="h3" sx={styles.title}>
+                {item.title}
+              </Heading>
+              <Text sx={styles.description}>{item.description}</Text>
+              <div className="card-footer">
+                <div className="image">
+                  <Image src={item.avatar} alt="Client Image" />
+                </div>
+                <div className="reviwer-info">
+                  <Heading as="h4" sx={styles.heading}>
+                    {item.name}
+                  </Heading>
+                  <Text sx={styles.designation}>{item.designation}</Text>
+                </div>
+              </div>
+            </Box>
+          ))}
+        </Carousel>
+      </Box>
     </section>
   );
 }
